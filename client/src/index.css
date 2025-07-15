@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --ucolor1: black;
+  --ucolor2: rgb(80, 78, 78);
+  --ucolor3: rgb(36, 35, 35);
+  --ucolor4: white;
+
+  --NFwidth: 150px;
+  --NFheight: 150px;
+
+  --iconDimention: 40px;
+
+  /* --toastify-color-light: #fff; */
+  --toastify-color-info: #3498db;
+  --toastify-color-success: rgb(0, 255, 149);
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: rgb(219, 92, 117);
+  /* --toastify-color-transparent: rgba(255, 255, 255, 0.7); */
+}
+
+.blueMode {
+  --color1: rgb(95, 158, 160);
+  --color2: rgb(56, 96, 97);
+  --color3: rgb(129, 239, 243);
+  --color4: rgba(129, 239, 243, 0.2);
+  /* --color5: rgb(25, 42, 46);  */
+}
+
+.greenMode {
+  --color1: rgb(4, 170, 107);
+  --color2: rgb(2, 97, 61);
+  --color3: rgb(46, 231, 160);
+  --color4: rgba(46, 231, 160, 0.2);
+}
+
+.pinkMode {
+  --color1: rgb(255, 116, 139);
+  --color2: rgb(173, 85, 100);
+  --color3: rgb(255, 192, 203);
+  --color4: rgba(255, 192, 203, 0.2);
+}
+
+html {
+  /* color-scheme: dark; */
+  background-color: var(--ucolor1);
+  color: var(--ucolor4);
+  scroll-behavior: smooth;
+  /* user-select: none; */
+}
+
+/* Width and color of the scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: var(--ucolor1);
+  /* border-radius: 20px; */
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: var(--color2);
+  /* border-radius: 20px; */
+  /* border: 3px solid #444;  */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color3);
+}
+
+/* Buttons (arrows at the top and bottom of scrollbar) */
+::-webkit-scrollbar-button {
+  /* background: #333; */
+  display: none;
+}
+
+/* Corner (where vertical and horizontal scrollbars meet) */
+::-webkit-scrollbar-corner {
+  background: #111;
+  /* background: var(--color1);  */
+}
+
+input[type="text"] {
+  background-color: var(--ucolor1);
+  color: var(--ucolor4);
+}
+
+input[type="text"]::placeholder {
+  color: var(--ucolor3);
+  color: var(--ucolor2);
+}
+
+/* button {
+
+} */
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:disabled {
+  cursor: no-drop;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --iconDimention: 30px;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  :root {
+    --NFwidth: 100px;
+    --NFheight: 100px;
+  }
+}

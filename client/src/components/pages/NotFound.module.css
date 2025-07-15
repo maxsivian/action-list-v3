@@ -1,0 +1,87 @@
+/* :root {
+  --NFwidth: 100px;
+  --NFheight: 100px;
+} */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* height: 100vh; */
+  /* height: 100%; */
+  /* background-color: red; */
+  padding: 20px;
+
+  /* overflow: auto; */
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 8px;
+
+  background-color: var(--ucolor3);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
+
+.header {
+  font-size: 72px;
+  font-weight: bold;
+  color: var(--color3);
+}
+
+.subHeader {
+  font-size: 24px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 16px;
+  color: gray;
+  margin-top: 20px;
+}
+
+.actions {
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  background-color: var(--color2);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.errorImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.image {
+  margin-top: 30px;
+  /* border: 1px solid red; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+@media screen and (max-width: 500px) {
+  :root {
+    --NFwidth: 100px;
+    --NFheight: 100px;
+  }
+} */

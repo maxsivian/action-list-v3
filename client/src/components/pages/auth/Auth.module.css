@@ -1,0 +1,794 @@
+.mainContainer {
+  --fontSize: 20px;
+  --boxWidth: 400px;
+
+  /* border: 1px solid blue; */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (max-height: 700px) {
+  .mainContainer {
+    transform: scale(0.9) translateY(-20px);
+  }
+}
+
+.mainContainer button {
+  border: none;
+}
+
+.loadingOverlay {
+  /* border: 1px solid red; */
+  background-color: rgba(0, 0, 0, 0.7);
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loadingIcon {
+  /* border: 1px solid white; */
+  width: 200px;
+  height: 200px;
+}
+.loadingText {
+  color: var(--color3);
+  font-size: 24px;
+}
+
+.containerSignUp,
+.containerSignIn,
+.containerForgotPassword,
+.containerResetPassword {
+  border: 2px solid var(--color2);
+  border-radius: 10px;
+  overflow: hidden;
+
+  max-width: 1000px;
+  height: 560px;
+  width: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden !important;
+}
+
+.containerSignIn,
+.containerForgotPassword,
+.containerResetPassword {
+  flex-direction: row-reverse;
+}
+
+.sideBox {
+  /* border: 1px solid blue; */
+  background-color: var(--color4);
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  text-align: center;
+  font-size: var(--fontSize);
+
+  width: var(--boxWidth);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  /* position: relative; */
+  /* z-index: 1; */
+
+  /* transition: transform 1s ease; */
+}
+
+.logoC {
+  width: 50%;
+  /* height: 50%; */
+}
+
+.sideBox h2 {
+  color: var(--color3);
+
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
+  /* color: transparent; */
+
+  /* background-image: linear-gradient(90deg, var(--color1), var(--color3), var(--color1) ); */
+}
+
+.sideBox p {
+  font-size: calc(0.8 * var(--fontSize));
+}
+
+.sideButton,
+.sideButtonMobile {
+  background-color: var(--color4);
+  color: white;
+  color: var(--color3);
+  font-size: calc(0.8 * var(--fontSize));
+  padding: 10px 20px;
+  border-radius: 5px;
+  /* margin-top: 10px; */
+}
+
+.sideButton:hover,
+.sideButtonMobile:hover {
+  transform: none;
+  box-shadow: 0px 0px calc(0.5 * var(--fontSize)) var(--color1);
+}
+
+.sideButton:active,
+.sideButtonMobile:active {
+  transform: none;
+  filter: brightness(1.3);
+}
+
+.sideButtonMobile {
+  display: none;
+}
+
+.box {
+  /* border: 1px solid blue; */
+  /* background-color: blueviolet; */
+  height: 100%;
+  width: var(--boxWidth);
+
+  padding: 10px;
+  /* border-radius: 10px; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* z-index: -1; */
+
+  /* transition: transform 1s ease; */
+}
+
+.box h1 {
+  /* border: 1px solid blue; */
+  color: white;
+  color: var(--color3);
+
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  /* background-clip: text; */
+  /* color: transparent; */
+
+  /* background-image: linear-gradient(90deg, var(--color3), var(--color2)); */
+
+  text-shadow: 0px 0px 20px var(--color1);
+  font-size: calc(2 * var(--fontSize));
+  margin-bottom: 20px;
+  width: fit-content;
+  align-self: center;
+}
+
+.item {
+  border: 1px solid transparent;
+  /* border: 1px solid red; */
+  background-color: var(--color4) !important;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+
+  height: 50px;
+  /* height: 100%; */
+
+  position: relative;
+}
+
+.item:focus-within {
+  border-color: var(--color3);
+}
+
+.item .iconC {
+  /* border: 1px solid greenyellow; */
+  width: calc(2 * var(--fontSize));
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+}
+
+.inputText {
+  border: none;
+  outline: 2px solid transparent;
+  background-color: transparent !important;
+  color: white;
+  width: 100%;
+  font-size: var(--fontSize);
+
+  /* padding: 20px 10px 5px 40px; */
+  padding: var(--fontSize) calc(0.5 * var(--fontSize))
+    calc(0.25 * var(--fontSize)) calc(2 * var(--fontSize));
+
+
+  transition: outline-color 0.5s;
+  z-index: 1;
+}
+
+.inputText + label {
+  /* user-select: none; */
+  color: var(--color1);
+  font-size: var(--fontSize);
+  pointer-events: none;
+
+  position: absolute;
+  left: calc(2 * var(--fontSize));
+  top: calc(0.6 * var(--fontSize));
+
+  transition: all 0.3s ease-in-out;
+}
+
+.inputText:focus + label,
+.inputText:not(:placeholder-shown) + label {
+  /* position: absolute; */
+  left: calc(2 * var(--fontSize));
+  top: calc(0.4 * var(--fontSize));
+  font-size: calc(0.5 * var(--fontSize));
+}
+
+.passwordVisibility {
+  background-color: transparent;
+  height: 100%;
+  width: calc(2 * var(--fontSize));
+
+  outline: none;
+}
+
+.SignUpbutton {
+  /* background-color: var(--color3); */
+
+  background-image: linear-gradient(
+    90deg,
+    var(--color2),
+    var(--color3),
+    var(--color2)
+  );
+
+  border-radius: 5px;
+  font-size: var(--fontSize);
+  padding: calc(0.6 * var(--fontSize));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.SignUpbutton:hover {
+  transform: none;
+  box-shadow: 0px 0px var(--fontSize) var(--color1);
+}
+
+.SignUpbutton:active {
+  filter: brightness(1.3);
+}
+
+
+.SignUpbutton .icon {
+  /* border: 1px solid forestgreen; */
+  height: 100%;
+  width: 25px;
+  height: 25px;
+}
+
+.otherOptionsC {
+  /* border: 1px solid red; */
+  font-size: var(--fontSize);
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.otherOptions {
+  /* border: 1px solid blue; */
+  display: flex;
+  gap: 10px;
+}
+
+.otherOption {
+  /* border: 1px solid blue !important; */
+  /* width: 40px; */
+  /* height: 40px; */
+  /* border-radius: 100%; */
+}
+
+.otherOptionIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.sideButtonMobile {
+  display: none;
+}
+
+@keyframes animateBoxSignUp {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animateSideBoxSignUp {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animateBoxSignIn {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animateSideBoxSignIn {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animateBoxForgotPassword {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animateSideBoxForgotPassword {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animateBoxResetPassword {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animateSideBoxResetPassword {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animateBoxSignUp {
+  animation-name: animateBoxSignUp;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  /* animation-fill-mode: both; */
+  /* animation-iteration-count: infinite; */
+  /* animation-direction: alternate; */
+  transform: translateX(100%);
+}
+
+.animateSideBoxSignUp {
+  animation-name: animateSideBoxSignUp;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  /* animation-fill-mode: both; */
+  /* animation-iteration-count: infinite; */
+  /* animation-direction: alternate; */
+  transform: translateX(-100%);
+}
+
+.animateBoxSignIn {
+  animation-name: animateBoxSignIn;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: translateX(-100%);
+}
+
+.animateSideBoxSignIn {
+  animation-name: animateSideBoxSignIn;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: translateX(100%);
+}
+
+.animateBoxForgotPassword {
+  animation-name: animateBoxForgotPassword;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: translateX(-100%);
+}
+
+.animateSideBoxForgotPassword {
+  animation-name: animateSideBoxForgotPassword;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: translateX(100%);
+}
+
+.animateBoxResetPassword {
+  animation-name: animateBoxResetPassword;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: translateX(-100%);
+}
+
+.animateSideBoxResetPassword {
+  animation-name: animateSideBoxResetPassword;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform: translateX(100%);
+}
+
+@media all and (max-width: 830px) {
+  @keyframes animateBoxSignUp {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-25%);
+    }
+  }
+
+  @keyframes animateSideBoxSignUp {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(401%);
+    }
+  }
+
+  @keyframes animateBoxSignIn {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-32%);
+    }
+  }
+
+  @keyframes animateSideBoxSignIn {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(309%);
+    }
+  }
+
+  @keyframes animateBoxForgotPassword {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes animateSideBoxForgotPassword {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(202%);
+    }
+  }
+
+  @keyframes animateBoxResetPassword {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-29%);
+    }
+  }
+
+  @keyframes animateSideBoxResetPassword {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(341%);
+    }
+  }
+
+  .animateBoxSignUp {
+    transform: translateY(-25%);
+  }
+
+  .animateSideBoxSignUp {
+    transform: translateY(401%);
+  }
+
+  .animateBoxSignIn {
+    transform: translateY(-32%);
+  }
+
+  .animateSideBoxSignIn {
+    transform: translateY(309%);
+  }
+
+  .animateBoxForgotPassword {
+    transform: translateY(-50%);
+  }
+
+  .animateSideBoxForgotPassword {
+    transform: translateY(202%);
+  }
+
+  .animateBoxResetPassword {
+    transform: translateY(-29%);
+  }
+
+  .animateSideBoxResetPassword {
+    transform: translateY(341%);
+  }
+
+  .containerSignUp,
+  .containerSignIn,
+  .containerForgotPassword,
+  .containerResetPassword {
+    flex-direction: column-reverse;
+    height: fit-content;
+    /* height: 560px; */
+    margin-top: 10px;
+  }
+
+  .box {
+    /* border: 1px solid red; */
+    height: fit-content;
+  }
+
+  .sideBox {
+    /* border: 1px solid blue; */
+    height: 150px;
+    gap: 5px;
+  }
+
+  .logoC {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sideButtonMobile {
+    display: block;
+  }
+
+  .sideButton {
+    display: none;
+  }
+}
+
+@media all and (max-width: 425px) {
+  .mainContainer {
+    --boxWidth: 100%;
+  }
+
+  .containerSignUp,
+  .containerSignIn,
+  .containerForgotPassword,
+  .containerResetPassword {
+    width: 98vw;
+  }
+}
+
+
+
+/* SignUp */
+
+.passwordConditions {
+  /* border: 1px solid red; */
+  font-size: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.passwordCondition {
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.passwordBox {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.greenBg {
+  background-color: rgb(0, 199, 99);
+}
+
+.redBg {
+  background-color: crimson;
+}
+
+.passwordMatch {
+  text-align: center;
+}
+
+.green {
+  color: rgb(0, 199, 99);
+}
+
+.red {
+  color: crimson;
+}
+
+
+
+/* ForgotPassword */
+
+.ForgotPasswordButton {
+  background-color: var(--color4);
+  color: white;
+  color: var(--color3);
+  font-size: calc(0.8 * var(--fontSize));
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.ForgotPasswordButton:hover {
+  transform: none;
+  box-shadow: 0px 0px calc(0.5 * var(--fontSize)) var(--color1);
+}
+
+.ForgotPasswordButton:active {
+  transform: none;
+  filter: brightness(1.3);
+}
+
+/* .ForgotPasswordButton .icon {
+  font-size: calc(1 * var(--fontSize));
+} */
+
+.forgotPasswordText {
+  color: var(--color1);
+  text-align: center;
+}
+
+
+
+/* ResetPassword */
+
+.resetIconC {
+  border: 1px solid var(--color1);
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.resetIcon {
+  border: 1px solid white;
+  width: 30px;
+  height: 100%;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resetIconC .text {
+  color: var(--color1);
+  word-wrap: break-word;
+  /* text-wrap: wrap; */
+  overflow: hidden;
+}
+
+.resetItem {
+  background-color: var(--ucolor1) !important;
+}
+
+
+
+/* SignUpVerificationPending */
+
+.SignUpVerificationPendingC,
+.SignUpVerificationC,
+.SignInVerificationPendingC {
+  border: 1px solid var(--color2);
+  border-radius: 20px 5px;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+
+  word-wrap: break-word;
+  word-break: break-all;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.SignUpVerificationPendingC .highlight,
+.SignUpVerificationC .highlight,
+.SignInVerificationPendingC .highlight {
+  color: var(--color3);
+}
+
+
+
+/* SignUpVerification */
+
+.SignUpVerificationC h1 {
+  color: var(--color1);
+}
+
+
+
+/* SignUpVerificationPending */
+
+.SignInVerificationPendingC button,
+.SignUpVerificationC button {
+  border: none;
+  padding: 5px 10px;
+  /* border-radius: 5px; */
+  border-radius: 10px 5px;
+  background-color: var(--color2);
+  font-size: 16px;
+
+  margin-top: 10px;
+  color: var(--color3);
+}
+.SignInVerificationPendingC button:hover,
+.SignUpVerificationC button:hover {
+  transform: none;
+  background-color: var(--color1);
+}
+.SignInVerificationPendingC button:active,
+.SignUpVerificationC button:active {
+  transform: scale(0.99);
+}

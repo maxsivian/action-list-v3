@@ -1,0 +1,6 @@
+bugs
+1. name update close bug
+
+1. 2 step verification
+2. email spam limit
+3. organize server code

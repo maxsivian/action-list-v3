@@ -1,0 +1,22 @@
+to top button = 40
+layouts = 1936
+pages = 779
+ui = 51
+utils = 48
+scripts = 41
+/root = 440
+redux (-authslice) = 719
+
+server (-auth) = 353
+............................ > 4407
+
+
+
+auth pages = 794 (c) + 1289
+redux (auth slice only) = 723
+server (auth only) = 647
+............................ > 3453
+
+
+
+total - 7860

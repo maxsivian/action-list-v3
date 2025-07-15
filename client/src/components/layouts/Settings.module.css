@@ -1,0 +1,161 @@
+.container {
+  /* border: 1px solid red !important; */
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  /* border: 1px solid red !important; */
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0 10px;
+}
+
+.icon {
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon:hover{
+  animation-name: IconRotate;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes IconRotate{
+  to{
+    transform: rotateZ(360deg);
+  }
+}
+
+
+
+.box {
+  background-color: var(--color4);
+  border: 1px solid var(--color1);
+
+  width: 250px;
+  max-width: 80vw;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 35px;
+
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;
+  /* transform: scale(0.9); */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.show {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* .hide {
+  opacity: 0;
+  transform: scale(0.9);
+} */
+
+.box button{
+  background-color: var(--ucolor3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px 5px 10px;
+}
+
+
+.colorThemeBox{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.colorThemeBox button{
+  color: black;
+}
+
+.blueTheme{
+  background-color: cadetblue !important;
+}
+
+.greenTheme{
+  background-color: rgb(4, 170, 107) !important;
+}
+
+.purpleTheme{
+  background-color: rgb(253, 134, 154) !important;
+}
+
+
+.closeButton{
+  border-radius: 0px !important;
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0px !important;
+  background-color: crimson !important;
+  /* border-top-right-radius: 9px !important; */
+  border-bottom-left-radius: 10px !important;
+  
+  justify-content: center !important;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.closeButton:hover{
+  /* background-color: rgb(226, 74, 104) !important; */
+  transform: none;
+}
+
+.closeButton svg{
+  /* position: absolute; */
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.closeButton:hover svg{
+  /* transform: scale(1.1); */
+  animation: wiggle 0.4s ease;
+  /* background-color: rgb(226, 74, 104) !important; */
+}
+
+.overlay {
+  /* background-color: red; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

@@ -1,0 +1,211 @@
+.container {
+  border: 1px solid var(--color1);
+  width: min(400px, 98vw);
+  margin: auto;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  --fontSize: 20px;
+}
+
+.container h1 {
+  width: fit-content;
+  margin: auto;
+  color: var(--color3);
+  text-shadow: 0px 0px 20px var(--color1);
+}
+
+/* .box {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+
+  padding: 5px 10px;
+  border-radius: 5px;
+} */
+
+.item {
+  border: 1px solid transparent;
+  /* border: 1px solid red; */
+  background-color: var(--color4) !important;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+
+  height: 50px;
+  /* height: 100%; */
+
+  position: relative;
+}
+
+.item .iconC {
+  /* border: 1px solid greenyellow; */
+  width: calc(2 * var(--fontSize));
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+}
+
+.inputText {
+  border: none;
+  outline: 2px solid transparent;
+  background-color: transparent !important;
+  color: white;
+  width: 100%;
+  font-size: var(--fontSize);
+
+  /* padding: 20px 10px 5px 40px; */
+  padding: var(--fontSize) calc(0.5 * var(--fontSize))
+    calc(0.25 * var(--fontSize)) calc(2 * var(--fontSize));
+
+  transition: outline-color 0.5s;
+  z-index: 1;
+}
+
+.inputText + label {
+  /* user-select: none; */
+  color: var(--color1);
+  font-size: var(--fontSize);
+  pointer-events: none;
+
+  position: absolute;
+  left: calc(2 * var(--fontSize));
+  top: calc(0.6 * var(--fontSize));
+
+  transition: all 0.3s ease-in-out;
+}
+
+.inputText:focus + label,
+.inputText:not(:placeholder-shown) + label {
+  /* position: absolute; */
+  left: calc(2 * var(--fontSize));
+  top: calc(0.4 * var(--fontSize));
+  font-size: calc(0.5 * var(--fontSize));
+}
+
+.accountSettingsButton {
+  /* background-color: var(--color3); */
+  border: none;
+
+  background-image: linear-gradient(
+    90deg,
+    var(--color2),
+    var(--color3),
+    var(--color2)
+  );
+
+  border-radius: 5px;
+  font-size: var(--fontSize);
+  padding: calc(0.6 * var(--fontSize));
+
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 10px;
+}
+
+.accountSettingsButton:hover {
+  transform: none;
+  box-shadow: 0px 0px var(--fontSize) var(--color1);
+}
+
+.accountSettingsButton:active {
+  filter: brightness(1.3);
+}
+
+.accountSettingsButton .icon {
+  /* border: 1px solid forestgreen; */
+  height: 100%;
+  width: 25px;
+  height: 25px;
+
+  position: relative;
+  top: 1px;
+}
+
+.settingsButtons {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.settingsButton,
+.saveButton {
+  border: none;
+  background-color: var(--color4);
+  color: white;
+  color: var(--color3);
+  font-size: calc(0.8 * var(--fontSize));
+  padding: 10px 20px;
+  border-radius: 5px;
+  /* margin-top: 10px; */
+}
+
+.settingsButton:hover,
+.saveButton:hover {
+  transform: none;
+  box-shadow: 0px 0px calc(0.5 * var(--fontSize)) var(--color1);
+}
+
+.settingsButton:active,
+.saveButton:active {
+  transform: none;
+  filter: brightness(1.3);
+}
+
+.saveButton {
+  width: fit-content;
+  align-self: flex-end;
+}
+
+@keyframes AnimateSettings {
+  0% {
+    /* transform: translateY(100%); */
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  100% {
+    /* transform: translateY(0%); */
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.settingsButton {
+  animation-name: AnimateSettings;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  opacity: 0;
+}
+
+.settings1 {
+  animation-delay: 0.1s;
+}
+
+.settings2 {
+  animation-delay: 0.2s;
+}
+
+.settings3 {
+  animation-delay: 0.3s;
+}
+
+
+.controlButtons{
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
