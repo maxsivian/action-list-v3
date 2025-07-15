@@ -1,0 +1,16 @@
+.home{
+  /* border: 1px solid red; */
+  /* height: 100%; */
+  margin-bottom: 50px;
+}
+.taskInputContainer {
+  width: fit-content;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.tasksDisplayContainer {
+  width: fit-content;
+  margin: auto;
+  margin-top: 10px;
+}

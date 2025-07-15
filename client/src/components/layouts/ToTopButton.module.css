@@ -1,0 +1,17 @@
+.toTopButton {
+  /* border: 1px solid red; */
+  display: inline-block;
+  width: 50px;
+
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  opacity: 0.5;
+
+  transition: transform 0.3s;
+}
+
+.toTopButton:hover {
+  transform: translateY(-30%);
+}

@@ -1,0 +1,256 @@
+.header {
+  /* border: 1px solid red; */
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+}
+
+.logo {
+  flex-shrink: 0;
+  /* border: 1px solid blue; */
+  height: 40px;
+  width: 40px;
+  padding: 7px;
+
+  background-color: var(--color4);
+  border-radius: 10px;
+}
+
+.nav {
+  flex-grow: 1;
+  height: 100%;
+  border-radius: 10px;
+
+  background-color: var(--color4);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0px 20px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.logoLabel {
+  color: black;
+  color: var(--color3);
+  letter-spacing: 5px;
+  /* font-weight: bolder; */
+  text-shadow: 0px 0px 5px var(--color1);
+  font-size: 20px;
+}
+
+.nav ul {
+  /* background-color: var(--color4); */
+  background-color: transparent;
+  list-style: none;
+  display: flex;
+  height: 100%;
+}
+
+.nav ul a {
+  color: white;
+  height: 100%;
+  padding: 10px 10px 5px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 4px solid transparent;
+
+  transition: background-color 0.3s;
+}
+
+.nav ul a:hover {
+  background-color: var(--color4);
+}
+
+.settings {
+  /* border: 1px solid gold; */
+  /* padding: 3px; */
+  padding: 0px 0px 0px 0px;
+
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.active {
+  /* background-color: var(--ucolor3) !important; */
+  background-image: linear-gradient(180deg, transparent, var(--color2));
+  color: white;
+  border-bottom: 4px solid var(--color3) !important;
+}
+
+.account {
+  /* border: 1px solid blue; */
+  flex-shrink: 0;
+  height: 40px;
+  width: 40px;
+  /* padding: 7px; */
+
+  background-color: var(--color4);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position: relative; */
+}
+
+.account a {
+  /* border: 1px solid blue; */
+}
+
+.accountContainer {
+  /* border: 1px solid white; */
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pictureC {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.picture {
+  width: 100%;
+  height: 100%;
+
+}
+
+.accountPopUpC {
+  border: 1px solid var(--color1);
+  background-color: var(--color4);
+  backdrop-filter: blur(5px);
+
+  position: absolute;
+  top: 130%;
+  right: 0%;
+
+  width: fit-content;
+  /* width: 100px; */
+  border-radius: 10px;
+  /* padding: 10px; */
+
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+
+  overflow: hidden;
+
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.accountPopUpC a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+
+  color: var(--ucolor4);
+  transition: background-color 0.3s;
+}
+
+.accountPopUpC a:hover {
+  background-color: var(--color2);
+}
+
+.accountPopUpC a:active {
+  background-color: var(--color1);
+}
+
+.accountPopUpC ul li {
+  /* border: 1px solid red; */
+  list-style: none;
+}
+
+.accountPopUpC button {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+
+  color: var(--ucolor4);
+  background-color: transparent;
+  transition: background-color 0.3s;
+
+  transform: none;
+}
+
+.accountPopUpC button:hover {
+  background-color: var(--color2);
+}
+
+.accountPopUpC button:active {
+  background-color: var(--color1);
+}
+
+.anim {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media screen and (max-width: 560px) {
+  .header {
+    gap: 5px;
+    padding: 5px;
+    height: fit-content;
+  }
+
+  .nav {
+    flex-direction: column;
+    padding-top: 5px;
+    gap: 5px;
+    height: auto;
+  }
+
+  .logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .account {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .logoLabel {
+    color: black;
+    color: var(--color3);
+    letter-spacing: 5px;
+    /* font-weight: bolder; */
+    text-shadow: 0px 0px 5px var(--color1);
+    font-size: 12px;
+  }
+  .logo {
+    height: 62px;
+    width: 62px;
+  }
+
+  .account {
+    height: 62px;
+    width: 62px;
+  }
+}
