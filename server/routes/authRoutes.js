@@ -91,6 +91,26 @@ router.post("/google-auth", async (req, res) => {
             }
         });
 
+
+        // return res
+        //     .cookie("authToken", authToken, {
+        //         httpOnly: true,
+        //         secure: true,
+        //         sameSite: "None",
+        //         maxAge: 30 * 24 * 60 * 60 * 1000, // in ms
+        //     })
+        //     .status(200)
+        //     .json({
+        //         success: true,
+        //         user: {
+        //             mongo_id: user.id,
+        //             name: user.name,
+        //             email: user.email,
+        //             picture: user.picture,
+        //         },
+        //     });
+
+
     } catch (error) {
         console.log("authRoutes (post) `/google-auth` error: ", error)
         // console.log("error.name: ", error.name)
@@ -112,9 +132,9 @@ router.post("/pre-signup", async (req, res) => {
 
         let { name, email, password } = req.body
 
-        name = name.trim()
+        name = name?.trim()
         email = email?.trim().toLowerCase()
-        password = password.trim()
+        password = password?.trim()
 
 
         if (!name) {
@@ -146,7 +166,7 @@ router.post("/pre-signup", async (req, res) => {
         const salt = await bcrypt.genSalt(10)
         const securedPassword = await bcrypt.hash(password, salt)
 
-        const user = new User({
+        const newUser = new User({
             name: name,
             email: email,
             password: securedPassword
@@ -155,27 +175,27 @@ router.post("/pre-signup", async (req, res) => {
 
         //email part
         const token = crypto.randomBytes(32).toString('hex');
-        user.status.verify = {
+        newUser.status.verify = {
             token,
             expiry: Date.now() + 24 * 60 * 60 * 1000 // 24 hours
             // expiry: Date.now() // testing
         };
 
-        await user.save()
+        await newUser.save()
 
 
 
-        const verifyLink = `${CLIENT_BASE}/signup/verification?email=${user.email}&token=${token}`;
+        const verifyLink = `${CLIENT_BASE}/signup/verification?email=${newUser.email}&token=${token}`;
         // console.log("verify link", verifyLink);
 
         const SignUpVerificationHTML = compiledSignUpVerificationTemplateData({
-            name: user.name,
+            name: newUser.name,
             action_url: verifyLink,
         });
 
         let mailOptions = {
             from: '"Action List Support" <maxsivian.legend@gmail.com>',
-            to: user.email,
+            to: newUser.email,
             subject: 'Account Verification',
             html: SignUpVerificationHTML
         };
@@ -287,7 +307,7 @@ router.post("/signin", async (req, res) => {
         let { email, password } = req.body
 
         email = email?.trim().toLowerCase()
-        password = password.trim()
+        password = password?.trim()
 
         if (!email) {
             return res.status(400).json({ success: false, message: "Email is empty" })
@@ -481,7 +501,7 @@ router.post("/request-reset-password", async (req, res) => {
             };
             await user.save()
 
-        
+
             const resetLink = `${CLIENT_BASE}/resetpassword/?name=${user.name}&email=${user.email}&token=${token}`;
 
             // console.log('Reset link:', resetLink);
@@ -528,8 +548,8 @@ router.post("/reset-password", async (req, res) => {
         let { password, token, email } = req.body
 
         email = email?.trim().toLowerCase()
-        password = password.trim()
-        token = token.trim()
+        password = password?.trim()
+        token = token?.trim()
 
         // console.log("token", token);
         // console.log("password", password);

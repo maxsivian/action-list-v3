@@ -192,6 +192,7 @@
   /* height: 100%; */
 
   position: relative;
+  transition: border 0.5s; 
 }
 
 .item:focus-within {
