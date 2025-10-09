@@ -140,7 +140,7 @@ const ForgotPassword = () => {
                         </button>
 
                         <div className={styles.forgotPasswordText}>
-                            We will send a password reset link to this email address if it is associated with an account.
+                            We'll send a reset link if this email is linked to an account.
                         </div>
 
                         <button className={styles.sideButtonMobile} onClick={handleSideButtonClick}

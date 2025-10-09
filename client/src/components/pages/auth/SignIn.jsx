@@ -213,7 +213,7 @@ const SignIn = () => {
                             <LogoSVG />
                         </div>
                         <h2>Welcome Back</h2>
-                        <p>We're glad to have you back! Sign In to access your tasks and keep everything in sync.</p>
+                        <p>We're glad to have you back! Sign In to access your tasks and stay in sync..</p>
                         <button className={styles.sideButton} onClick={handleSideButtonClick}>No account yet? Sign Up</button>
                     </div>
                 </div>
