@@ -31,7 +31,9 @@ const TaskItem = ({ title, desc, isCompleted, id, index, isImportant, toggleTask
           <input type="checkbox" tabIndex={-1} className={styles.customCheckbox} onChange={() => toggleTask({ id, arrayName })} checked={isCompleted} />
 
           {/* {isCompleted && ( */}
-          <div className={styles.checkIcon}>
+          <div className={styles.checkIcon}
+            onMouseEnter={() => { tickRef.current?.playFromBeginning() }}
+          >
             {/* <lord-icon
                 // src={`/tick.json`}
                 src={tickIcon}
@@ -56,7 +58,9 @@ const TaskItem = ({ title, desc, isCompleted, id, index, isImportant, toggleTask
         </label>
 
 
-        <button className={styles.button} onClick={() => markImportant({ id, arrayName })} tabIndex={-1} aria-label="Mark Important">
+        <button className={styles.button} onClick={() => markImportant({ id, arrayName })} tabIndex={-1} aria-label="Mark Important"
+          onMouseEnter={() => { starRef.current?.playFromBeginning() }}
+        >
           {/* <lord-icon
             src={`/star.json`}
             stroke="bold"
@@ -73,7 +77,9 @@ const TaskItem = ({ title, desc, isCompleted, id, index, isImportant, toggleTask
           />
         </button>
 
-        <button onClick={() => editTask({ title, desc, id, arrayName })} className={styles.lordIcon} tabIndex={-1} aria-label="Edit">
+        <button onClick={() => editTask({ title, desc, id, arrayName })} className={styles.lordIcon} tabIndex={-1} aria-label="Edit"
+          onMouseEnter={() => { editRef.current?.playFromBeginning() }}
+        >
           {/* <lord-icon
             src={`/edit.json`}
             stroke="bold"
@@ -90,7 +96,9 @@ const TaskItem = ({ title, desc, isCompleted, id, index, isImportant, toggleTask
           />
         </button>
 
-        <button onClick={() => deleteTaskById({ id, arrayName })} className={styles.lordIcon} tabIndex={-1} aria-label="Delete">
+        <button onClick={() => deleteTaskById({ id, arrayName })} className={styles.lordIcon} tabIndex={-1} aria-label="Delete"
+          onMouseEnter={() => { deleteRef.current?.playFromBeginning() }}
+        >
           {/* <lord-icon
             src={`/delete.json`}
             stroke="bold"
