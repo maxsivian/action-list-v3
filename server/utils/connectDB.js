@@ -18,9 +18,9 @@ export async function connectDB() {
 }
 
 // Handle database disconnections and attempt reconnections
-mongoose.connection.on("disconnected", () => {
-  console.error("⚠️ MongoDB Disconnected! Retrying...");
-  connectDB();
-});
+// mongoose.connection.on("disconnected", () => {
+//   console.error("⚠️ MongoDB Disconnected! Retrying...");
+//   connectDB();
+// });
 
 
